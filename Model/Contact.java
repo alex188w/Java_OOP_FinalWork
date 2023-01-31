@@ -2,12 +2,28 @@ package Model;
 
 import java.util.Map;
 
-public class Contact {
+public class Contact implements ContactName, ContactCommunication{
 
     private String firstName;
     private String lastName;
-    public Map<String, String> communication;
+    private Map<String, String> communication;
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getFullName() {
+        return String.format("%s %s", getFirstName(), getLastName());
+    }
+
+    public Map<String, String> getCommunication() {
+        return communication;
+    }
+    
     public Contact(String firstName, String lastName, Map<String, String> communication) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -19,14 +35,10 @@ public class Contact {
         Contact t = (Contact) obj;
         return this.firstName.equals(t.firstName)
                 && this.lastName.equals(t.lastName);
-    }
-
-    public String fullName() {
-        return String.format("%s %s", firstName, lastName);
-    }
+    }   
 
     @Override
     public String toString() {
-        return "Contact: name = " + firstName + ", lastName = " + lastName + "\ncommunication: " + communication + "\n";
+        return "Contact: name = " + getFirstName() + ", lastName = " + getLastName() + "\ncommunication: " + getCommunication() + "\n";
     }
 }

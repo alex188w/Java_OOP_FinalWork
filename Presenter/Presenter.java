@@ -61,7 +61,7 @@ public class Presenter {
     public void outputAllfullName(Phonebook currentBook) {
         for (int i = 0; i < currentBook.count(); i++) {
             Contact contact = currentBook.getContact(i);
-            System.out.println(contact.fullName());
+            System.out.println(contact.getFullName());
         }
     }
 
@@ -78,7 +78,7 @@ public class Presenter {
         for (int i = 0; i < currentBook.count(); i++) {
             Contact contact = currentBook.getContact(i);
             if (contact.equals(addContact)) {
-                contact.communication.put(nameCommunication, viewCommunication);
+                contact.getCommunication().put(nameCommunication, viewCommunication);
                 count++;
             }
         }
@@ -104,7 +104,7 @@ public class Presenter {
         for (int i = 0; i < currentBook.count(); i++) {
             Contact contact = currentBook.getContact(i);
             if (contact.equals(delContact)) {
-                contact.communication.keySet().removeIf(k -> k.equals(delCommunication));
+                contact.getCommunication().keySet().removeIf(k -> k.equals(delCommunication));
                 count++;
             }
         }

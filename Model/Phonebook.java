@@ -43,10 +43,6 @@ public class Phonebook {
                 && contacts.size() > index;
     }
 
-    public List<Contact> getContacts() {
-        return contacts;
-    }
-
     public int count() {
         return contacts.size();
     }

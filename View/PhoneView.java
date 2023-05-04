@@ -8,7 +8,7 @@ import Model.Contact;
 import Model.Phonebook;
 import Presenter.Presenter;
 
-public class View {
+public class PhoneView {
 
     public static void ButtonClick() {
 
